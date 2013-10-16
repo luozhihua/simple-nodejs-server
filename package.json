@@ -1,0 +1,26 @@
+{
+  "name": "simple-nodejs-server",
+  "description": "A simple http server developed with nodejs and ejs",
+  "version": "0.0.1",
+  "author": {
+    "name": "colin luo",
+    "email": "mail@luozhihua.com"
+  },
+  "keywords": [
+    "http server",
+    "server",
+    "ejs"
+  ],
+  "dependencies": {
+    "ejs": "*"
+  },
+  "main": "./server.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/luozhihua/simple-nodejs-server.git"
+  },
+  "scripts": {
+    "test": "node server"
+  },
+  "readme": "# simple-nodejs-server\n\nA simple http server developed by nodejs.\n\n[![Build Status](https://travis-ci.org/luozhihua/simple-nodejs-server.png)](https://travis-ci.org/luozhihua/simple-nodejs-server)\n"
+}

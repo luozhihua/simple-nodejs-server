@@ -1,0 +1,3 @@
+[submodule "webos/css/animate"]
+	path = webos/css/animate
+	url = https://github.com/daneden/animate.css.git

@@ -12,7 +12,7 @@ var version;
  * @return {String} 版本号
  */
 function readStaticFileVersion() {
-  var file = path.resolve(__dirname, '../webos/version.json');
+  var file = path.resolve(__dirname, '../static/version.json');
   var version = fs.readFileSync(file, 'utf-8');
   return version;
 }
@@ -23,7 +23,8 @@ function compile(req, res) {
       reqUrl,
       templatePath,
       template,
-      html;
+      html,
+      stateCode = 200;
 
   reqUrl = url.parse(req.url);
   pathname = reqUrl.pathname.replace(/^\//,'');
@@ -51,10 +52,11 @@ function compile(req, res) {
       pageName: pathname
     });
   } catch(e) {
-    html = '404: Page Not Found!'
+    stateCode = 404;
+    html = stateCode + ': Page Not Found! path:'+ templatePath;
   }
 
-  res.writeHead(200, {
+  res.writeHead(stateCode, {
     "Content-Type": "text/html",
     "Content-Length": html.length
   });
@@ -65,7 +67,7 @@ exports.direct = function(req, res) {
   var reqUrl = url.parse(req.url).pathname;
 
   version = readStaticFileVersion();
-  if (reqUrl.match(/^\/webos/)) {
+  if (reqUrl.match(/^\/static/)) {
     fileServer.write(req, res, version);
   } else {
     compile(req, res);

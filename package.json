@@ -20,6 +20,7 @@
     "url": "git://github.com/luozhihua/simple-nodejs-server.git"
   },
   "scripts": {
+    "start": "node server",
     "test": "node server"
   },
   "readme": "# simple-nodejs-server\n\nA simple http server developed by nodejs.\n\n[![Build Status](https://travis-ci.org/luozhihua/simple-nodejs-server.png)](https://travis-ci.org/luozhihua/simple-nodejs-server)\n"
